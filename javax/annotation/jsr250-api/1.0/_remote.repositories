@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 10:05:23 WAT 2020
+jsr250-api-1.0.jar>central=
+jsr250-api-1.0.pom>jcenter=
+jsr250-api-1.0.pom>central=
+jsr250-api-1.0.jar>jcenter=

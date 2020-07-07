@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jun 29 21:56:01 WAT 2020
+pact-jvm-consumer_2.12-3.6.14.jar>jcenter=
+pact-jvm-consumer_2.12-3.6.14.pom>jcenter=

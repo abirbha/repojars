@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:51:43 WAT 2020
+http-builder-0.7.1.jar>central=
+http-builder-0.7.1-sources.jar>central=
+http-builder-0.7.1.pom>central=

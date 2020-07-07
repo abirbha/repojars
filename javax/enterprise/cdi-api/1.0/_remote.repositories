@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 10:05:23 WAT 2020
+cdi-api-1.0-sources.jar>central=
+cdi-api-1.0.jar>central=
+cdi-api-1.0.pom>central=

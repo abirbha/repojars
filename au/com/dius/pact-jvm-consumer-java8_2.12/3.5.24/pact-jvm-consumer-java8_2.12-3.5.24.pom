@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>au.com.dius</groupId>
+  <artifactId>pact-jvm-consumer-java8_2.12</artifactId>
+  <version>3.5.24</version>
+  <name>pact-jvm-consumer-java8_2.12</name>
+  <description># pact-jvm-consumer-java8
+Provides a Java8 lambda based DSL for use with Junit to build consumer tests.
+
+# A Lambda DSL for Pact
+
+This is an extension for the pact DSL provided by [pact-jvm-consumer](../pact-jvm-consumer). The difference between
+the default pact DSL and this lambda DSL is, as the name suggests, the usage of lambdas. The use of lambdas makes the code much cleaner.
+
+## Why a new DSL implementation?
+
+The lambda DSL solves the following two main issues. Both are visible in the following code sample:
+ 
+```java
+new PactDslJsonArray()
+    .array()                            # open an array
+    .stringValue(&amp;quot;a1&amp;quot;)                  # choose the method that is valid for arrays
+    .stringValue(&amp;quot;a2&amp;quot;)                  # choose the method that is valid for arrays
+    .closeArray()                       # close the array
+    .array()                            # open an array
+    .numberValue(1)                     # choose the method that is valid for arrays
+    .numberValue(2)                     # choose the method that is valid for arrays
+    .closeArray()                       # close the array
+    .array()                            # open an array
+    .object()                           # now we work with an object
+    .stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;)          # choose the method that is valid for objects
+    .closeObject()                      # close the object and we&amp;apos;re back in the array
+    .closeArray()                       # close the array
+```
+
+### The existing DSL is quite error-prone
+
+Methods may only be called in certain states. For example `object()` may only be called when you&amp;apos;re currently working on an array whereas `object(name)`
+is only allowed to be called when working on an object. But both of the methods are available. You&amp;apos;ll find out at runtime if you&amp;apos;re using the correct method.
+
+Finally, the need for opening and closing objects and arrays makes usage cumbersome.
+
+The lambda DSL has no ambiguous methods and there&amp;apos;s no need to close objects and arrays as all the work on such an object is wrapped in a lamda call.
+
+### The existing DSL is hard to read
+
+When formatting your source code with an IDE the code becomes hard to read as there&amp;apos;s no indentation possible. Of course, you could do it by hand but we want auto formatting!
+Auto formatting works great for the new DSL!
+
+```java
+array.object((o) -&amp;gt; {
+  o.stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;);          # an attribute
+  o.stringValue(&amp;quot;bar&amp;quot;, &amp;quot;Bar&amp;quot;);          # an attribute
+  o.object(&amp;quot;tar&amp;quot;, (tarObject) -&amp;gt; {      # an attribute with a nested object
+    tarObject.stringValue(&amp;quot;a&amp;quot;, &amp;quot;A&amp;quot;);    # attribute of the nested object
+    tarObject.stringValue(&amp;quot;b&amp;quot;, &amp;quot;B&amp;quot;);    # attribute of the nested object
+  })
+});
+```
+
+## Installation
+
+### Maven
+
+```
+&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;au.com.dius&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;pact-jvm-consumer-java8_2.12&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;${pact.version}&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+```
+
+## Usage
+
+Start with a static import of `LambdaDsl`. This class contains factory methods for the lambda dsl extension. 
+When you come accross the `body()` method of `PactDslWithProvider` builder start using the new extensions. 
+The call to `LambdaDsl` replaces the call to instance `new PactDslJsonArray()` and `new PactDslJsonBody()` of the pact library.
+
+```java
+io.pactfoundation.consumer.dsl.LambdaDsl.*
+```
+
+### Response body as json array
+
+```java
+
+import static io.pactfoundation.consumer.dsl.LambdaDsl.newJsonArray;
+
+...
+
+PactDslWithProvider builder = ...
+builder.given(&amp;quot;some state&amp;quot;)
+        .uponReceiving(&amp;quot;a request&amp;quot;)
+        .path(&amp;quot;/my-app/my-service&amp;quot;)
+        .method(&amp;quot;GET&amp;quot;)
+        .willRespondWith()
+        .status(200)
+        .body(newJsonArray((a) -&amp;gt; {
+            a.stringValue(&amp;quot;a1&amp;quot;);
+            a.stringValue(&amp;quot;a2&amp;quot;);
+        }).build());
+```
+
+### Response body as json object
+
+```java
+
+import static io.pactfoundation.consumer.dsl.LambdaDsl.newJsonBody;
+
+...
+
+PactDslWithProvider builder = ...
+builder.given(&amp;quot;some state&amp;quot;)
+        .uponReceiving(&amp;quot;a request&amp;quot;)
+        .path(&amp;quot;/my-app/my-service&amp;quot;)
+        .method(&amp;quot;GET&amp;quot;)
+        .willRespondWith()
+        .status(200)
+        .body(newJsonBody((o) -&amp;gt; {
+            o.stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;);
+            o.stringValue(&amp;quot;bar&amp;quot;, &amp;quot;Bar&amp;quot;);
+        }).build());
+```
+
+### Examples
+
+#### Simple Json object
+
+When creating simple json structures the difference between the two approaches isn&amp;apos;t big.
+
+##### JSON
+
+```json
+{
+    &amp;quot;bar&amp;quot;: &amp;quot;Bar&amp;quot;,
+    &amp;quot;foo&amp;quot;: &amp;quot;Foo&amp;quot;
+}
+```
+
+##### Pact DSL
+
+```java
+new PactDslJsonBody()
+    .stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;)
+    .stringValue(&amp;quot;bar&amp;quot;, &amp;quot;Bar&amp;quot;)
+```
+
+##### Lambda DSL
+
+```java
+newJsonBody((o) -&amp;gt; {
+    o.stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;);
+    o.stringValue(&amp;quot;bar&amp;quot;, &amp;quot;Bar&amp;quot;);
+}).build()
+```
+
+#### An array of arrays
+
+When we come to more complex constructs with arrays and nested objects the beauty of lambdas become visible! 
+
+##### JSON
+
+```json
+[
+    [&amp;quot;a1&amp;quot;, &amp;quot;a2&amp;quot;],
+    [1, 2],
+    [{&amp;quot;foo&amp;quot;: &amp;quot;Foo&amp;quot;}]
+]
+```
+
+##### Pact DSL
+
+```java
+new PactDslJsonArray()
+    .array()
+    .stringValue(&amp;quot;a1&amp;quot;)
+    .stringValue(&amp;quot;a2&amp;quot;)
+    .closeArray()
+    .array()
+    .numberValue(1)
+    .numberValue(2)
+    .closeArray()
+    .array()
+    .object()
+    .stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;)
+    .closeObject()
+    .closeArray()
+```
+
+##### Lambda DSL
+
+```java
+newJsonArray((rootArray) -&amp;gt; {
+    rootArray.array((a) -&amp;gt; a.stringValue(&amp;quot;a1&amp;quot;).stringValue(&amp;quot;a2&amp;quot;));
+    rootArray.array((a) -&amp;gt; a.numberValue(1).numberValue(2));
+    rootArray.array((a) -&amp;gt; a.object((o) -&amp;gt; o.stringValue(&amp;quot;foo&amp;quot;, &amp;quot;Foo&amp;quot;));
+}).build()
+
+```
+
+
+</description>
+  <url>https://github.com/DiUS/pact-jvm</url>
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>thetrav</id>
+      <name>Travis Dixon</name>
+      <email>the.trav@gmail.com</email>
+    </developer>
+    <developer>
+      <id>rholshausen</id>
+      <name>Ronald Holshausen</name>
+      <email>rholshausen@dius.com.au</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>https://github.com/DiUS/pact-jvm.git</connection>
+    <url>https://github.com/DiUS/pact-jvm</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>1.2.51</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+      <version>1.2.51</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>2.4.12</version>
+      <classifier>indy</classifier>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.microutils</groupId>
+      <artifactId>kotlin-logging</artifactId>
+      <version>1.4.4</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>org.jetbrains.kotlin</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.12.5</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.scala-logging</groupId>
+      <artifactId>scala-logging_2.12</artifactId>
+      <version>3.7.2</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>org.scala-lang</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>au.com.dius</groupId>
+      <artifactId>pact-jvm-consumer-junit_2.12</artifactId>
+      <version>3.5.24</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.specs2</groupId>
+      <artifactId>specs2-core_2.12</artifactId>
+      <version>3.9.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.specs2</groupId>
+      <artifactId>specs2-junit_2.12</artifactId>
+      <version>3.9.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.10.19</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>1.1-groovy-2.4</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>org.codehaus.groovy</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <version>2.6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.kotlintest</groupId>
+      <artifactId>kotlintest</artifactId>
+      <version>2.0.7</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

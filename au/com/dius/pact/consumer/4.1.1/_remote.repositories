@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 12:57:29 WAT 2020
+consumer-4.1.1.jar>central=
+consumer-4.1.1.pom>central=
+consumer-4.1.1-sources.jar>central=

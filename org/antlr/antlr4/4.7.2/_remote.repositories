@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 13:02:50 WAT 2020
+antlr4-4.7.2-sources.jar>central=
+antlr4-4.7.2.pom>central=
+antlr4-4.7.2.jar>central=

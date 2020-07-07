@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jul 04 16:13:09 WAT 2020
+scala-logging_2.12-3.7.2-sources.jar>central=
+scala-logging_2.12-3.7.2.jar>jcenter=
+scala-logging_2.12-3.7.2.pom>jcenter=
+scala-logging_2.12-3.7.2.jar>central=
+scala-logging_2.12-3.7.2.pom>central=

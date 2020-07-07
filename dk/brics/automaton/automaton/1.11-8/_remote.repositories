@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:52:10 WAT 2020
+automaton-1.11-8-sources.jar>central=
+automaton-1.11-8.jar>jcenter=
+automaton-1.11-8.pom>jcenter=
+automaton-1.11-8.pom>central=
+automaton-1.11-8.jar>central=

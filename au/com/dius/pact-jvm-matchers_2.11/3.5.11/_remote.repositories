@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 10:08:02 WAT 2020
+pact-jvm-matchers_2.11-3.5.11.pom>central=
+pact-jvm-matchers_2.11-3.5.11-sources.jar>central=
+pact-jvm-matchers_2.11-3.5.11.jar>central=

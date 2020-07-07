@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 12:56:14 WAT 2020
+parent-1.14.pom>jcenter=
+parent-1.14.pom>central=

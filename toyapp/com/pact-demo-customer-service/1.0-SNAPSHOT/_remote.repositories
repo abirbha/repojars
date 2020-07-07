@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 11:21:44 WAT 2020
+pact-demo-customer-service-1.0-SNAPSHOT.jar>=
+pact-demo-customer-service-1.0-SNAPSHOT-jar-with-dependencies.jar>=
+pact-demo-customer-service-1.0-SNAPSHOT.pom>=

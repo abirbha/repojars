@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 19:59:23 WAT 2020
+cassandra-all-0.8.1.pom>central=
+cassandra-all-0.8.1-sources.jar>central=
+cassandra-all-0.8.1.jar>central=

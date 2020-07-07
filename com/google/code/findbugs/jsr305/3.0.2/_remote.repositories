@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:54:11 WAT 2020
+jsr305-3.0.2-sources.jar>central=
+jsr305-3.0.2.jar>jcenter=
+jsr305-3.0.2.jar>central=
+jsr305-3.0.2.pom>central=

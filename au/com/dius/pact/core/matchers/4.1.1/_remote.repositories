@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 13:03:05 WAT 2020
+matchers-4.1.1-sources.jar>central=
+matchers-4.1.1.jar>central=
+matchers-4.1.1.pom>central=

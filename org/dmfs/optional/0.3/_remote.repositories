@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 13:03:04 WAT 2020
+optional-0.3.pom>jcenter=
+optional-0.3.jar>central=
+optional-0.3.pom>central=
+optional-0.3-sources.jar>central=
+optional-0.3.jar>jcenter=

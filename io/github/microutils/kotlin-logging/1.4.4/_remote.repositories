@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:51:28 WAT 2020
+kotlin-logging-1.4.4-sources.jar>central=
+kotlin-logging-1.4.4.jar>central=
+kotlin-logging-1.4.4.pom>jcenter=
+kotlin-logging-1.4.4.jar>jcenter=
+kotlin-logging-1.4.4.pom>central=

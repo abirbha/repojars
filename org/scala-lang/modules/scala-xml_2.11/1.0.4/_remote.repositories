@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:51:38 WAT 2020
+scala-xml_2.11-1.0.4.jar>central=
+scala-xml_2.11-1.0.4.pom>central=
+scala-xml_2.11-1.0.4-sources.jar>central=

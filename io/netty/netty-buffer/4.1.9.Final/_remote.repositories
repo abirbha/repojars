@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 02 21:25:43 WAT 2020
+netty-buffer-4.1.9.Final.jar>central=
+netty-buffer-4.1.9.Final-sources.jar>central=
+netty-buffer-4.1.9.Final.pom>central=
+netty-buffer-4.1.9.Final.pom>jcenter=

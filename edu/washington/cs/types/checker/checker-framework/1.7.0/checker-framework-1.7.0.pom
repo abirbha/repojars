@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    
+    <groupId>edu.washington.cs.types.checker</groupId>
+    <artifactId>checker-framework</artifactId>
+    <version>1.7.0</version>
+
+    <name>Checker framework</name>
+
+    <description>Checker framework</description>
+    <url>http://types.cs.washington.edu/checker-framework</url>
+    <licenses>
+        <license>
+            <name>GNU General Public License, version 2, with the Classpath Exception</name>
+            <url>http://openjdk.java.net/legal/gplv2+ce.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:hg:https://code.google.com/p/checker-framework</connection>
+        <developerConnection>scm:hg:https://code.google.com/p/checker-framework</developerConnection>
+        <url>http://code.google.com/p/checker-framework/source/browse</url>
+    </scm>
+</project>

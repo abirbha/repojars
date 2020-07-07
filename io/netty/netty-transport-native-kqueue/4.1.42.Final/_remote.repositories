@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Feb 16 14:47:09 WAT 2020
+netty-transport-native-kqueue-4.1.42.Final.pom>central=
+netty-transport-native-kqueue-4.1.42.Final-osx-x86_64.jar>central=
+netty-transport-native-kqueue-4.1.42.Final-sources.jar>central=

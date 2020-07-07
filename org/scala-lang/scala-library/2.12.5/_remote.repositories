@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jul 04 16:13:09 WAT 2020
+scala-library-2.12.5.pom>central=
+scala-library-2.12.5.jar>central=
+scala-library-2.12.5-sources.jar>central=

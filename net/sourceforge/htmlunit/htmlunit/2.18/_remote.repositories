@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Feb 16 14:20:58 WAT 2020
+htmlunit-2.18.jar>central=
+htmlunit-2.18-sources.jar>central=
+htmlunit-2.18.pom>central=

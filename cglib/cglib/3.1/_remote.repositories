@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Feb 16 14:20:34 WAT 2020
+cglib-3.1.jar>central=
+cglib-3.1.pom>central=
+cglib-3.1-sources.jar>central=

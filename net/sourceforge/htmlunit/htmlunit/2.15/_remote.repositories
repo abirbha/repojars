@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Oct 11 15:35:29 CAT 2018
+htmlunit-2.15.jar>central=
+htmlunit-2.15.pom>central=
+htmlunit-2.15-sources.jar>central=

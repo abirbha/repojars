@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jul 05 17:09:36 WAT 2020
+groovy-2.5.8.jar>central=
+groovy-2.5.8-sources.jar>central=
+groovy-2.5.8.pom>central=

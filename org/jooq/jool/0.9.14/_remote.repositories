@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 14:17:26 WAT 2020
+jool-0.9.14.jar>central=
+jool-0.9.14-sources.jar>central=
+jool-0.9.14.pom>central=

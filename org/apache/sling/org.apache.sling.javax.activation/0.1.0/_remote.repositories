@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 10:09:04 WAT 2020
+org.apache.sling.javax.activation-0.1.0.jar>central=
+org.apache.sling.javax.activation-0.1.0.pom>central=
+org.apache.sling.javax.activation-0.1.0.jar>jcenter=
+org.apache.sling.javax.activation-0.1.0-sources.jar>central=
+org.apache.sling.javax.activation-0.1.0.pom>jcenter=

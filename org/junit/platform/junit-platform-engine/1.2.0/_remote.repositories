@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:54:36 WAT 2020
+junit-platform-engine-1.2.0.jar>central=
+junit-platform-engine-1.2.0-sources.jar>central=
+junit-platform-engine-1.2.0.pom>central=

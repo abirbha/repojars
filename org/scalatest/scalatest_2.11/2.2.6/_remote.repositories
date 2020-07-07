@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 16:43:35 WAT 2020
+scalatest_2.11-2.2.6-sources.jar>central=
+scalatest_2.11-2.2.6.jar>central=
+scalatest_2.11-2.2.6.pom>central=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jul 04 16:13:16 WAT 2020
+scala-parser-combinators_2.12-1.0.5.jar>central=
+scala-parser-combinators_2.12-1.0.5.pom>central=
+scala-parser-combinators_2.12-1.0.5-sources.jar>central=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 19:59:46 WAT 2020
+libthrift-0.6.1.pom>central=
+libthrift-0.6.1.jar>central=
+libthrift-0.6.1-javadoc.jar>central=

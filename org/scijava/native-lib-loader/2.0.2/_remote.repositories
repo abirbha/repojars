@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:53:27 WAT 2020
+native-lib-loader-2.0.2.jar>central=
+native-lib-loader-2.0.2.pom>central=
+native-lib-loader-2.0.2-sources.jar>central=

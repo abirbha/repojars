@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:54:33 WAT 2020
+logback-core-1.2.3.pom>jcenter=
+logback-core-1.2.3.jar>jcenter=
+logback-core-1.2.3.pom>central=
+logback-core-1.2.3.jar>central=
+logback-core-1.2.3-sources.jar>central=

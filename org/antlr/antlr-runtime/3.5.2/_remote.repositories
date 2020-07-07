@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 13:02:52 WAT 2020
+antlr-runtime-3.5.2.jar>central=
+antlr-runtime-3.5.2-sources.jar>central=
+antlr-runtime-3.5.2.pom>central=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 15:52:20 WAT 2020
+unfiltered_2.11-0.8.4-sources.jar>central=
+unfiltered_2.11-0.8.4.jar>central=
+unfiltered_2.11-0.8.4.pom>central=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 30 11:22:45 WAT 2020
+pact-demo-core-data-service-1.0-SNAPSHOT.pom>=
+pact-demo-core-data-service-1.0-SNAPSHOT.jar>=
+pact-demo-core-data-service-1.0-SNAPSHOT-jar-with-dependencies.jar>=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 01 10:08:04 WAT 2020
+reflections-0.9.10-sources.jar>central=
+reflections-0.9.10.pom>central=
+reflections-0.9.10.jar>central=

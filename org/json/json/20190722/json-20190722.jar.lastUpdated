@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Feb 16 20:40:35 WAT 2020
+https\://maven.atlassian.com/3rdparty/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1581882035533
+http\://repo.jenkins-ci.org/releases/.lastUpdated=1581882035026
+https\://maven.atlassian.com/3rdparty/.lastUpdated=1581882034750
+http\://repo.jenkins-ci.org/releases/.error=
